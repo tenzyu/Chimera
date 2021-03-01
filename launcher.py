@@ -17,13 +17,13 @@ class MyBot(Bot):
 
         for cog in Path("cogs/").glob("*.py"):
             try:
-                self.load_extension("cogs." + cog.stem)
-                print("Loaded Extension:", cog.stem)
+                self.load_extension(f"cogs.{cog.stem}")
+                print(f"Loaded Extension:{cog.stem}")
             except Exception:
                 print_exc()
 
     async def on_ready(self):
-        print("logged in as:", self.user)
+        print(f"logged in as:{self.user}")
 
 
 if __name__ == "__main__":
