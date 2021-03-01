@@ -23,7 +23,7 @@ class MyBot(Bot):
                 print_exc()
 
     async def on_ready(self):
-        print(f"logged in as:{self.user}")
+        print(f"logged in as: {self.user}")
 
 
 if __name__ == "__main__":
