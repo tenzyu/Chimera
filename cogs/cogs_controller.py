@@ -13,17 +13,17 @@ class CogsController(Cog, command_attrs=dict(hidden=True)):
 
     @command(name="load")
     async def load_cog(self, ctx: Context, cog: str):
-        self.bot.load_extension("cogs." + cog)
+        self.bot.load_extension(f"cogs.{cog}")
         await ctx.reply(f"Loaded Extension: {cog}")
 
     @command(name="unload")
     async def unload_cog(self, ctx: Context, cog: str):
-        self.bot.unload_extension("cogs." + cog)
+        self.bot.unload_extension(f"cogs.{cog}")
         await ctx.reply(f"Unloaded Extension: {cog}")
 
     @command(name="reload")
     async def reload_cog(self, ctx: Context, cog: str):
-        self.bot.reload_extension("cogs." + cog)
+        self.bot.reload_extension(f"cogs.{cog}")
         await ctx.reply(f"Reloaded Extension: {cog}")
 
 
