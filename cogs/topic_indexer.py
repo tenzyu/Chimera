@@ -29,7 +29,7 @@ class TopicIndexer(Cog):
         return [
             channel
             for channel in self.guild.text_channels
-            if not channel.category.id in self.ignore_categories
+            if channel.category.id not in self.ignore_categories
         ]
 
     def index_embed_description(self):

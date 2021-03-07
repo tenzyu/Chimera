@@ -15,7 +15,8 @@ class RoleAssignor(Cog):
 
     async def assign_role(self, member: Member):
         role = self.role_bot if member.bot else self.role_member
-        None if role in member.roles else await member.add_roles(role)
+        if role not in member.roles:
+            await member.add_roles(role)
 
     @Cog.listener()
     async def on_member_join(self, member: Member):
